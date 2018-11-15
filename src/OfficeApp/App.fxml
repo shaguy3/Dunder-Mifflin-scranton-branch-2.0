@@ -40,9 +40,9 @@
             </MenuBar>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
-                  <Button fx:id="addSalesRepBtn" mnemonicParsing="false" text="Add a sales rep" />
-                  <Button fx:id="addClientBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Add a client" />
-                  <Button fx:id="addOrderBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Add an order" />
+                  <Button mnemonicParsing="false" text="Add a sales rep" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Add a client" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Add an order" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -117,7 +117,7 @@
                         <Label layoutX="16.0" layoutY="46.0" text="Last name:" />
                         <TextField layoutX="82.0" layoutY="11.0" prefHeight="25.0" prefWidth="111.0" />
                         <TextField layoutX="82.0" layoutY="42.0" prefHeight="25.0" prefWidth="111.0" />
-                        <Button layoutX="81.0" layoutY="75.0" mnemonicParsing="false" text="Add" />
+                        <Button fx:id="addSalesRepButton" layoutX="81.0" layoutY="75.0" mnemonicParsing="false" text="Add" />
                      </children>
                   </AnchorPane>
             </content>
@@ -130,7 +130,7 @@
                         <Label layoutX="15.0" layoutY="45.0" text="Client's name:" />
                         <TextField layoutX="101.0" layoutY="41.0" prefHeight="25.0" prefWidth="97.0" />
                         <ComboBox layoutX="101.0" layoutY="9.0" prefHeight="25.0" prefWidth="96.0" />
-                        <Button layoutX="100.0" layoutY="78.0" mnemonicParsing="false" text="Add" />
+                        <Button fx:id="addClientBtn" layoutX="100.0" layoutY="78.0" mnemonicParsing="false" text="Add" />
                      </children>
                   </AnchorPane>
             </content>
@@ -145,7 +145,7 @@
                         <Label layoutX="14.0" layoutY="78.0" text="Price:" />
                         <TextField layoutX="83.0" layoutY="42.0" prefHeight="25.0" prefWidth="110.0" />
                         <TextField layoutX="83.0" layoutY="74.0" prefHeight="25.0" prefWidth="110.0" />
-                        <Button layoutX="83.0" layoutY="111.0" mnemonicParsing="false" text="Add" />
+                        <Button fx:id="addOrderBtn" layoutX="83.0" layoutY="111.0" mnemonicParsing="false" text="Add" />
                      </children>
                   </AnchorPane>
             </content>
