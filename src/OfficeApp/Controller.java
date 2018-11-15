@@ -26,4 +26,6 @@ public class Controller implements Initializable {
             dbStatus.setText("Not connected to database");
         }
     }
+
+    //TODO add showing methods (show employees, show clients, and show orders)
 }
