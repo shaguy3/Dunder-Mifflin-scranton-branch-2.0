@@ -33,6 +33,28 @@ public class OfficeController implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         sqLiteConnection = new SQLiteConnection();
+        try { LoadSalesRepData(); } catch (SQLException ex) { ex.printStackTrace(); }
+    }
+
+    public void LoadSalesRepData() throws SQLException{
+        try {
+            Connection connection = SQLiteConnection.getConnection();
+            salesRepData = FXCollections.observableArrayList();
+            ResultSet resSet = connection.createStatement().executeQuery("SELECT * FROM SalesReps");
+            while (resSet.next()) {
+                salesRepData.add(new SalesRepData(resSet.getString(1), resSet.getString(2), resSet.getString(3)));
+            }
+
+            salesRepsIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
+            salesRepsFNameColumn.setCellValueFactory(new PropertyValueFactory<>("FName"));
+            salesRepsLNameColumn.setCellValueFactory(new PropertyValueFactory<>("LName"));
+
+            salesRepTable.setItems(null);
+            salesRepTable.setItems(salesRepData);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void LoadSalesRepData(ActionEvent actionEvent) throws SQLException{
