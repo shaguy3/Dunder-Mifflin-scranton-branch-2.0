@@ -1,7 +1,5 @@
 package LoginApp;
 
-import LoginApp.LoginModel;
-import OfficeApp.OfficeController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,14 +11,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javax.imageio.IIOException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    public LoginModel loginModel = new LoginModel();
+    private LoginModel loginModel = new LoginModel();
 
     @FXML
     private Label dbStatus;

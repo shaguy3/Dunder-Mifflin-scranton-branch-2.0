@@ -8,7 +8,7 @@ public class SalesRepData {
     private final StringProperty FName;
     private final StringProperty LName;
 
-    public SalesRepData(String id, String fName, String lName) {
+    SalesRepData(String id, String fName, String lName) {
         ID = new SimpleStringProperty(id);
         FName = new SimpleStringProperty(fName);
         LName = new SimpleStringProperty(lName);

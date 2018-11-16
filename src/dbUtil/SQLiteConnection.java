@@ -8,10 +8,9 @@ public class SQLiteConnection {
     public static Connection getConnection() {
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:OfficeDB.sqlite");
-            return connection;
+            return DriverManager.getConnection("jdbc:sqlite:OfficeDB.sqlite");
         } catch (Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
             return null; }
     }
 
