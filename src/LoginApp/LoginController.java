@@ -56,8 +56,6 @@ public class LoginController implements Initializable {
                     FXMLLoader loader = new FXMLLoader();
                     Pane root = loader.load(getClass().getResource("/OfficeApp/OfficeApp.fxml").openStream());
 
-                    OfficeController officeController = loader.getController();
-
                     Scene scene = new Scene(root);
                     userStage.setScene(scene);
                     userStage.setTitle("Office dashboard");
