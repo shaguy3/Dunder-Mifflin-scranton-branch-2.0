@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginApp.LoginController">
+   <children>
+      <Label layoutX="24.0" layoutY="98.0" text="Username:" />
+      <Label layoutX="27.0" layoutY="131.0" text="Password:" />
+      <Label layoutX="75.0" layoutY="42.0" text="Please login to the system" />
+      <TextField fx:id="userField" layoutX="115.0" layoutY="92.0" />
+      <PasswordField fx:id="passField" layoutX="115.0" layoutY="125.0" />
+      <Label layoutX="75.0" layoutY="301.0" text="Created by Guy Shamilyan" />
+      <Button fx:id="loginBtn" layoutX="115.0" layoutY="164.0" mnemonicParsing="false" onAction="#Login" text="Login" />
+      <Label fx:id="loginStatus" layoutX="115.0" layoutY="203.0" prefHeight="27.0" prefWidth="192.0" />
+      <Label fx:id="dbStatus" layoutX="75.0" layoutY="259.0" text="Test" />
+   </children>
+</AnchorPane>

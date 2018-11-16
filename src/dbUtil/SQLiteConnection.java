@@ -1,4 +1,4 @@
-package OfficeApp;
+package dbUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
