@@ -8,10 +8,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -137,6 +139,36 @@ public class OfficeController implements Initializable {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+        }
+    }
+
+    @FXML
+    private TextField SRIDField;
+    @FXML
+    private TextField SRFNameField;
+    @FXML
+    private TextField SRLNameField;
+
+    @FXML
+    private void AddSalesRep() {
+        String sql = "INSERT INTO SalesReps (ID,Firstname,Lastname) VALUES (?,?,?)";
+
+        if (!SRIDField.getText().equals("") && !SRFNameField.getText().equals("") && !SRLNameField.getText().equals("")) {
+            try {
+                Connection conn = SQLiteConnection.getConnection();
+                PreparedStatement prepStat = conn.prepareStatement(sql);
+
+                prepStat.setString(1, SRIDField.getText());
+                prepStat.setString(2, SRFNameField.getText());
+                prepStat.setString(3, SRLNameField.getText());
+
+                SRIDField.clear();
+                SRFNameField.clear();
+                SRLNameField.clear();
+
+                prepStat.execute();
+                conn.close();
+            } catch (SQLException ex) { ex.printStackTrace(); }
         }
     }
 }
