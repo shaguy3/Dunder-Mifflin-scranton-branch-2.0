@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OfficeApp.OfficeController">
    <top>
       <MenuBar>
@@ -9,9 +11,7 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
-                  <MenuItem fx:id="showSalesReps" mnemonicParsing="false" onAction="#LoadSalesRepData" text="Refresh sales reps" />
-                  <MenuItem mnemonicParsing="false" text="Refresh clients" />
-                  <MenuItem mnemonicParsing="false" text="Refresh orders" />
+                  <MenuItem fx:id="refresh" mnemonicParsing="false" onAction="#Refresh" text="Refresh" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -45,31 +45,31 @@
                   </BorderPane>
                </content>
           </Tab>
-            <Tab fx:id="showClientsBtn" text="Clients">
+            <Tab text="Clients">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="clientsTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <columns>
-                            <TableColumn prefWidth="43.0" text="ID" />
-                            <TableColumn prefWidth="164.0" text="Name" />
-                              <TableColumn prefWidth="99.0" text="Sales rep's ID" />
+                            <TableColumn fx:id="clientsIDColumn" prefWidth="43.0" text="ID" />
+                            <TableColumn fx:id="clientsNameColumn" prefWidth="164.0" text="Name" />
+                              <TableColumn fx:id="clientsSalesRepsIDColumn" prefWidth="99.0" text="Sales rep's ID" />
                           </columns>
                         </TableView>
                      </center>
                   </BorderPane>
                </content>
             </Tab>
-            <Tab fx:id="showOrdersBtn" text="Orders">
+            <Tab text="Orders">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="ordersTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Order ID" />
-                            <TableColumn prefWidth="83.0" text="Clients ID" />
-                              <TableColumn prefWidth="83.0" text="Quantity" />
-                              <TableColumn prefWidth="114.0" text="Price per package" />
+                            <TableColumn fx:id="ordersIDColumn" prefWidth="75.0" text="Order ID" />
+                              <TableColumn fx:id="ordersQuantityColumn" prefWidth="83.0" text="Quantity" />
+                              <TableColumn fx:id="ordersPriceColumn" prefWidth="114.0" text="Price per package" />
+                            <TableColumn fx:id="ordersClientIDColumn" prefWidth="83.0" text="Clients ID" />
                           </columns>
                         </TableView>
                      </center>
