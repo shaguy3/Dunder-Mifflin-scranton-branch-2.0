@@ -45,10 +45,6 @@ public class OfficeController implements Initializable {
     @FXML
     private TableColumn<OrdersData, Integer> ordersClientIDColumn;
 
-    private ObservableList<SalesRepData> salesRepData;
-    private ObservableList<ClientsData> clientsData;
-    private ObservableList<OrdersData> ordersData;
-
     public void initialize(URL location, ResourceBundle resources) {
         try {
             LoadSalesRepData();
@@ -68,7 +64,7 @@ public class OfficeController implements Initializable {
     private void LoadSalesRepData() throws SQLException{
         try {
             Connection connection = SQLiteConnection.getConnection();
-            salesRepData = FXCollections.observableArrayList();
+            ObservableList<SalesRepData> salesRepData = FXCollections.observableArrayList();
             ResultSet resSet = null;
             if (connection != null) {
                 resSet = connection.createStatement().executeQuery("SELECT * FROM SalesReps");
@@ -94,7 +90,7 @@ public class OfficeController implements Initializable {
     private void LoadClientData() throws SQLException{
         try {
             Connection connection = SQLiteConnection.getConnection();
-            clientsData = FXCollections.observableArrayList();
+            ObservableList<ClientsData> clientsData = FXCollections.observableArrayList();
             ResultSet resSet = null;
             if (connection != null) {
                 resSet = connection.createStatement().executeQuery("SELECT * FROM Clients");
@@ -120,7 +116,7 @@ public class OfficeController implements Initializable {
     private void LoadOrderData() throws SQLException{
         try {
             Connection connection = SQLiteConnection.getConnection();
-            ordersData = FXCollections.observableArrayList();
+            ObservableList<OrdersData> ordersData = FXCollections.observableArrayList();
             ResultSet resSet = null;
             if (connection != null) {
                 resSet = connection.createStatement().executeQuery("SELECT * FROM Orders");
